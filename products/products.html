@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Explore Sarnaik Farms' esteemed product range, featuring our high-quality dairy offerings including Pedha, Dahi, and more. Discover the best of our product lineup and enjoy premium dairy experiences.">
+
+    <title>Our Esteemed Products | Sarnaik Farms</title>
+
+    <!-- Favicon for Browser Tab and Search Engine Display -->
+    <link rel="icon" href="https://sarnaikfarms.com/assets/images/logo.png" type="image/png">
+
+    <!-- Open Graph Tags for Social Media and Search Engine Previews -->
+    <meta property="og:title" content="Our Esteemed Products | Sarnaik Farms">
+    <meta property="og:description" content="Explore Sarnaik Farms' esteemed product range, featuring our high-quality dairy offerings including Pedha, Dahi, and more. Discover the best of our product lineup and enjoy premium dairy experiences.">
+    <meta property="og:image" content="https://sarnaikfarms.com/assets/images/products-preview.jpg">
+    <meta property="og:image:alt" content="Preview of Sarnaik Farms' Esteemed Products">
+    <meta property="og:url" content="https://sarnaikfarms.com/products/products.html">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sarnaikfarms.com/products/products.html">
+
+    <!-- Schema Markup for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Our Esteemed Products",
+      "description": "Explore Sarnaik Farms' esteemed product range, featuring our high-quality dairy offerings including Pedha, Dahi, and more. Discover the best of our product lineup and enjoy premium dairy experiences.",
+      "url": "https://sarnaikfarms.com/products/products.html",
+      "image": "https://sarnaikfarms.com/assets/images/products-preview.jpg"
+    }
+    </script>
+
+    <!-- Fonts and Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mukta:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Teko:wght@300..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Local Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../products/product.css">
+
+    <!-- JavaScript Files -->
+    <script src="../assets/js/translate.js" defer></script>
+    <script src="../assets/js/toggle.js" defer></script>
+    <script src="../assets/js/add_to_cart.js" defer></script>
+    <script src="../assets/js/swipe.js" defer></script>
+    <script src="https://js.stripe.com/v3/" defer></script>
+    <script src="../assets/js/text.js" defer></script>
+    <script src="../assets/js/alert.js" defer></script>
+</head>
+
+
+<header>
+    <nav class="navbar-unique">
+      <div class="logo-unique">
+        <a href="../index.html"><img src="../assets/images/logo.png" alt="Sarnaik Farms Logo"></a>
+      </div>
+
+      <div class="menu-unique">
+        <div class="dropdown-unique">
+          <button class="dropbtn-unique">About</button>
+          <div class="dropdown-content-unique">
+            <a href="../about/about.html">About Us</a>
+            <a href="../about/our-story.html">Our Story</a>
+            <a href="../about/contact-us.html">Contact Us</a>
+          </div>
+        </div>
+        <div class="dropdown-unique">
+          <button class="dropbtn-unique">Products</button>
+          <div class="dropdown-content-unique">
+            <a href="../products/products.html">Products</a>
+        <!--    <a href="../products/agriculture.html">Agriculture</a>-->
+          </div>
+        </div>
+        <div class="dropdown-unique">
+          <button class="dropbtn-unique">Food Safety</button>
+          <div class="dropdown-content-unique">
+            <a href="../food-safety/our-standards.html">Our Standards</a>
+         <!--   <a href="../food-safety/traceability.html">Traceability</a>-->
+          </div>
+        </div>
+        <div class="dropdown-unique">
+          <button class="dropbtn-unique">PR Media</button>
+          <div class="dropdown-content-unique">
+         <!--   <a href="../media/news.html">News</a>-->
+            <a href="../media/gallery.html">Gallery</a>
+          </div>
+        </div>
+        <a href="../Keshav-Nagar-Pedha/keshav-nagar-pedha.html" class="dropbtn-unique">Keshav Nagar Pedha</a>
+      </div>
+
+      <div class="menu-toggle-unique" onclick="toggleSidebarUnique()">
+        <span>&#9776;</span>
+      </div>
+
+      <div class="icons-unique">
+       
+        <a href="javascript:void(0)" onclick="openCartSidebarUnique()"><img src="../assets/images/add.png"
+          alt="Cart" style="height: 35px; width: auto; font-weight: bold;"></a>
+      </div>
+      <button class="user-entry" onclick="window.location.href='../login.html'">Login</button>
+      <div id="google_translate_element"></div>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'x-default', // Set to 'x-default' so English appears in the dropdown
+            includedLanguages: 'en,mr,hi,pa,mai', // English, Marathi, Hindi, Punjabi, Malwani (Maithili as closest)
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+        }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </nav>
+
+  </header>
+
+
+<!-- Sidebar for cart -->
+<div id="cartSidebarUnique" class="cart-sidebar-unique">
+  <div class="cart-sidebar-header">
+    <img src="../assets/images/shopping-cart.png" alt="Cart" id="cartIcon" class="cart-icon">
+    <a href="javascript:void(0)" id="closeCartSidebar" class="close-btn" onclick="closeCartSidebar()">×</a>
+  </div>
+  <div id="cartContent" class="cart-content">
+    <p id="cartEmptyMessage">Your cart is empty</p>
+    <ul id="cartSidebarItems" class="cart-items-list"></ul>
+    <div class="cart-actions">
+      <a href="../products/products.html" id="buyMoreProducts" class="buy-products-btn">Buy More Products</a>
+      <a href="javascript:void(0)" id="checkoutBtn"  class="buy-now"  class="checkout-btn" onclick="startCheckout(this)">Checkout</a>
+    </div>
+  </div>
+</div>
+
+
+  <aside class="sidebar-unique">
+    <a href="javascript:void(0)" class="closebtn-unique" onclick="closeSidebarUnique()">&times;</a>
+    <a href="../index.html">Home</a>
+    <a href="../about/about.html">About Us</a>
+    <a href="../about/our-story.html">Our Story</a>
+    <a href="../about/contact-us.html">Contact Us</a>
+    <a href="../products/products.html">Products</a>
+   <!-- <a href="../products/agriculture.html">Agriculture</a>-->
+    <a href="../food-safety/our-standards.html">Our Standards</a>
+ <!--   <a href="../food-safety/traceability.html">Traceability</a>-->
+   <!-- <a href="../media/news.html">News</a>-->
+    <a href="../media/gallery.html">Gallery</a>
+    <a href="../Keshav-Nagar-Pedha/keshav-nagar-pedha.html">Keshav Nagar Pedha</a>
+ </aside>
+</header>
+
+<section id="sf-intro">
+  <div class="sf-intro-container">
+      <div class="sf-intro-text">
+          <h1 class="sf-intro-heading">Pure Delight in Every Drop</h1>
+          <p class="sf-intro-subheading">
+            At Sarnaik Dairy, we take pride in delivering the purest and freshest milk products, crafted with love and care straight from our farms. From our wholesome milk to our deliciously creamy dahi and indulgent shrikhand, each product is a testament to our commitment to quality. We ensure that every step of the process, from milking to packaging, meets the highest standards. This meticulous attention to detail allows you and your family to enjoy the best nature has to offer.
+
+            Our range of dairy delights, including refreshing lassi and rich pedha, is made with only the finest ingredients. We promise a taste that’s both nutritious and irresistible. At Sarnaik Dairy, every sip and bite carries the essence of freshness and tradition, bringing you a taste of the countryside in every product. Enjoy the exceptional quality and authentic flavor that defines our commitment to dairy excellence.
+
+            We are also dedicated to maintaining the highest standards of hygiene and sustainability. Our farms employ eco-friendly practices to ensure that our products are not only fresh but also responsibly produced. By nurturing the environment and embracing innovative techniques, Sarnaik Dairy enhances every step of our process. Each product reflects our passion for quality, care, and tradition, delivering a dairy experience that you can trust and savor with every bite.
+          </p>
+      </div>
+
+      <div class="sf-intro-video">
+          <video id="video1" class="video" autoplay muted>
+              <source src="../assets/images/sarnaik_video2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          <video id="video2" class="video" autoplay muted style="display:none;">
+              <source src="../assets/images/dairy_video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+      </div>
+  </div><script>
+ document.addEventListener('DOMContentLoaded', () => {
+    const video1 = document.getElementById('video1');
+    const video2 = document.getElementById('video2');
+
+    video1.addEventListener('ended', function() {
+        video1.style.display = 'none';
+        video2.style.display = 'block';
+        video2.play();
+    });
+
+    video2.addEventListener('ended', function() {
+        video2.style.display = 'none';
+        video1.style.display = 'block';
+        video1.play();
+    });
+});
+
+</script>
+</section>
+
+   
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search for products..." oninput="search()">
+        <button onclick="search()">Search</button>
+    </div>
+
+      
+          <section id="core-crops-section" class="core-crops">
+            <div class="container">
+                <h1 id="products-heading">Products</h1>
+                <div class="crop-grid">
+                    <div id="crop-item-1" class="crop-item">
+                      <a href="../products/pedha.html" class="product-link">
+                      <img src="../assets/images/8.jpg" alt="Pedha" class="crop-image animated-flip">
+                      </a>
+                      <h2 class="crop-title">Keshav Nagar Pedha</h2>
+                      <p class="crop-description">Indulge in the rich, creamy delight of Keshav Nagar Pedha, handcrafted with natural ingredients for a melt-in-your-mouth experience. Our traditional pedha offers the perfect balance of sweetness and texture, making every bite a celebration.</p>
+                      <p class="crop-price">Price: ₹100</p>
+                      <div class="product-actions">
+                          <div class="product-actions-row">
+                              <button id="add-to-cart-2" class="add-to-cart" data-item-id="1">Add to Cart</button>
+                          </div>
+                          <div class="product-actions-row buy-now-row">
+                              <button class="buy-now" data-name="Pedha" data-price="100" data-image="../assets/images/8.jpg" onclick="startCheckout(this)">Buy Now</button>
+                          </div>
+                      </div>
+                  </div>
+      
+      
+                    <div id="crop-item-2" class="crop-item">
+                      <a href="../products/lassi.html" class="product-link">
+                        <img src="../assets/images/OYHLU81-LASSI.jpg" alt="Lassi" class="crop-image animated-flip">
+                    </a>
+                        <h2 class="crop-title">Lassi</h2>
+                        <p class="crop-description">Refresh yourself with our lassi, made with natural ingredients for a deliciously smooth and creamy drink. This traditional beverage offers a perfect balance of sweetness and tang, making it an ideal treat for any time of day.</p>
+                        <p class="crop-price">Price: ₹50</p>
+                        <div class="product-actions">
+                            <div class="product-actions-row">
+                                <button id="add-to-cart-2" class="add-to-cart" data-item-id="2">Add to Cart</button>
+                            </div>
+                            <div class="product-actions-row buy-now-row">
+                                <button class="buy-now" data-name="Lassi" data-price="50" data-image="../assets/images/OYHLU81-LASSI.jpg" onclick="startCheckout(this)">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div id="crop-item-3" class="crop-item">
+                      <a href="../products/milk.html" class="product-link">
+                        <img src="../assets/images/Glass Milk Bottle Mockup.jpg" alt="Milk" class="crop-image animated-flip">
+                      </a>
+                        <h2 class="crop-title">Milk</h2>
+                        <p class="crop-description">Experience the pure taste of farm-fresh milk, rich in nutrients and delivered straight from our dairy to your home. Our milk is carefully sourced to ensure quality, freshness, and natural goodness in every sip.</p>
+                        <p class="crop-price">Price: ₹40</p>
+                        <div class="product-actions">
+                            <div class="product-actions-row">
+                                <button id="add-to-cart-3" class="add-to-cart" data-item-id="3">Add to Cart</button>
+                            </div>
+                            <div class="product-actions-row buy-now-row">
+                                <button class="buy-now" data-name="Milk" data-price="40" data-image="../assets/images/Glass Milk Bottle Mockup.jpg" onclick="startCheckout(this)">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div id="crop-item-4" class="crop-item">
+                      <a href="../products/shrikhand.html" class="product-link">
+                        <img src="../assets/images/SHRIKHAND.jpg" alt="Shrikhand" class="crop-image animated-flip">
+                      </a>
+                        <h2 class="crop-title">Shrikhand</h2>
+                        <p class="crop-description">Delight in the rich, creamy texture of our shrikhand, made with natural ingredients for an authentic taste. This traditional dessert is perfectly balanced with sweetness and flavor, offering a truly indulgent experience.</p>
+                        <p class="crop-price">Price: ₹80</p>
+                        <div class="product-actions">
+                            <div class="product-actions-row">
+                                <button id="add-to-cart-4" class="add-to-cart" data-item-id="4">Add to Cart</button>
+                            </div>
+                            <div class="product-actions-row buy-now-row">
+                                <button class="buy-now" data-name="Shrikhand" data-price="80" data-image="../assets/images/SHRIKHAND.jpg" onclick="startCheckout(this)">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div id="crop-item-5" class="crop-item">
+                      <a href="../products/paneer.html" class="product-link">
+                        <img src="../assets/images/PANEER.jpg" alt="Paneer" class="crop-image animated-flip">
+                      </a>
+                        <h2 class="crop-title">Paneer</h2>
+                        <p class="crop-description">Enjoy the fresh, rich taste of our paneer, made with natural ingredients for a wholesome experience. Soft and flavorful, it’s the perfect addition to your favorite dishes, bringing authentic goodness to every bite.</p>
+                        <p class="crop-price">Price: ₹120</p>
+                        <div class="product-actions">
+                            <div class="product-actions-row">
+                                <button id="add-to-cart-5" class="add-to-cart" data-item-id="5">Add to Cart</button>
+                            </div>
+                            <div class="product-actions-row buy-now-row">
+                                <button class="buy-now" data-name="Paneer" data-price="120" data-image="../assets/images/PANEER.jpg" onclick="startCheckout(this)">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div id="crop-item-6" class="crop-item">
+                      <a href="../products/matha.html" class="product-link">
+                        <img src="../assets/images/OYHLU81-MATTHA.jpg" alt="Matha" class="crop-image animated-flip">
+                      </a> 
+                        <h2 class="crop-title">Matha</h2>
+                        <p class="crop-description">Quench your thirst with our refreshing matha, made with natural ingredients for a light and tangy taste. This traditional drink is the perfect blend of spices and yogurt, offering a cooling and flavorful experience.</p>
+                        <p class="crop-price">Price: ₹60</p>
+                        <div class="product-actions">
+                            <div class="product-actions-row">
+                                <button id="add-to-cart-6" class="add-to-cart" data-item-id="6">Add to Cart</button>
+                            </div>
+                            <div class="product-actions-row buy-now-row">
+                                <button class="buy-now" data-name="Matha" data-price="60" data-image="../assets/images/OYHLU81-MATTHA.jpg" onclick="startCheckout(this)">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="no-products-message" style="display: none; text-align: center; margin-top: 20px;">
+                    <p>No products found. Please try searching for another product.</p>
+                </div>
+            </div>
+        </section>
+        <script>
+    document.querySelector('.sidebar-toggle-button').addEventListener('click', function() {
+    document.body.classList.toggle('sidebar-open');
+});
+
+    </script>
+            
+    </section>
+   
+  
+    <footer class="custom-footer">
+      <div class="custom-container">
+        <div class="custom-row">
+          <div class="custom-footer-col custom-company">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="../about/about.html">About Us</a></li>
+              <li><a href="../products/products.html">Our Products</a></li>
+              <li><a href="../food-safety/our-standards.html">Our Standards</a></li>
+              <li><a href="../media/gallery.html">Gallery</a></li>
+            </ul>
+          </div>
+    
+          <div class="custom-footer-col custom-products">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="../products/products.html">Keshav Nagar Pedha</a></li>
+              <li><a href="../products/products.html">Dahi</a></li>
+              <li><a href="../products/products.html">Shrikhand</a></li>
+              <li><a href="../products/products.html">Lassi</a></li>
+              <li><a href="../products/products.html">Matha</a></li>
+            </ul>
+          </div>
+    
+          <div class="custom-footer-col custom-contact">
+            <h4>Contact Us</h4>
+            <ul>
+              <li><a href="tel:+91763647726">9763647726</a></li>
+              <li><a href="mailto:sarnaikdairy2020@gmail.com">sarnaikdairy2020@gmail.com</a></li>
+              <li><a href="https://www.google.com/maps?q=At.+post.+Chinchambapen+Ta.+Risod+Dist.+Washim+444505" target="_blank">At. post. Chinchambapen Ta. Risod Dist. Washim 444505</a></li>
+              <li><a href="mailto:sarnaiksfpc@gmail.com">sarnaiksfpc@gmail.com</a></li>
+            </ul>
+          </div>
+    
+          <div class="custom-footer-col custom-follow">
+            <h4>Follow Us</h4>
+            <div class="custom-social-links">
+              <a href="https://www.facebook.com/">
+                <img src="../assets/images/facebook.png" alt="Facebook">
+              </a>
+              <a href="https://www.youtube.com/@SARNAIK_FARMS">
+                <img src="../assets/images/youtube.png" alt="YouTube">
+              </a>
+              <a href="https://www.instagram.com/sarnaikdairy07?igsh=OHI3YTZza2k5d25v&utm_source=qr">
+                <img src="../assets/images/instagram.png" alt="Instagram">
+              </a>
+              <a href="https://www.twitter.com/">
+                <img src="../assets/images/twitter.png" alt="Twitter">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  
+
+  </html>

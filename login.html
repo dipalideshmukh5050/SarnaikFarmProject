@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Log in to your Sarnaik Farms account to access your personalized dashboard, manage your orders, and enjoy exclusive offers. Secure and easy login process.">
+
+    <title>Login - Sarnaik Farms</title>
+
+    <!-- Favicon for Browser Tab and Search Engine Display -->
+    <link rel="icon" href="https://sarnaikfarms.com/assets/images/logo.png" type="image/png">
+
+    <!-- Open Graph Tags for Social Media and Search Engine Previews -->
+    <meta property="og:title" content="Login - Sarnaik Farms">
+    <meta property="og:description" content="Log in to your Sarnaik Farms account to access your personalized dashboard, manage your orders, and enjoy exclusive offers. Secure and easy login process.">
+    <meta property="og:image" content="https://sarnaikfarms.com/assets/images/login-preview.jpg">
+    <meta property="og:image:alt" content="Login Page Preview for Sarnaik Farms">
+    <meta property="og:url" content="https://sarnaikfarms.com/login.html">
+
+    <!-- Schema Markup for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Login - Sarnaik Farms",
+      "description": "Log in to your Sarnaik Farms account to access your personalized dashboard, manage your orders, and enjoy exclusive offers. Secure and easy login process.",
+      "url": "https://sarnaikfarms.com/login.html",
+      "image": "https://sarnaikfarms.com/assets/images/login-preview.jpg"
+    }
+    </script>
+
+    <!-- Fonts and Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mukta:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Teko:wght@300..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Local Stylesheets -->
+    <link rel="stylesheet" href="../login.css">
+
+    <!-- JavaScript Files -->
+    <script src="login.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+       
+        <div class="sarnaik-farms-container">
+        <div class="sarnaik-text">
+            SAR<span class="rupee-symbol">₹</span>NAIK<span class="leaf-icon">🌱</span>
+        </div>
+        <div class="farms-text">
+            FARMS
+       </div>
+        <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <div class="button-container">
+                <button type="submit">Login</button>
+                <a href="signup.html" id="signupButton">Sign Up</a>
+            </div>
+
+            <!-- Forgot Password Link -->
+            <div class="forgot-password">
+                <a href="forgot-password.html">Forgot Password?</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Container for notifications -->
+    <div class="notification-container"></div>
+</body>
+
+</html>

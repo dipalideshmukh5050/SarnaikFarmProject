@@ -1,0 +1,22 @@
+{
+  "name": "stripe-integration",
+  "version": "1.0.0",
+  "description": "Example project for Stripe integration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo 'No build step necessary for this project'"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.9.14",
+    "stripe": "^8.222.0"
+  }
+}

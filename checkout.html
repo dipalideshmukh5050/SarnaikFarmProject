@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Complete your payment securely with Sarnaik Farms. Ensure all payment details are correct and follow the instructions to finalize your purchase.">
+
+    <title>Payment - Sarnaik Farms</title>
+
+    <!-- Favicon for Browser Tab and Search Engine Display -->
+    <link rel="icon" href="https://sarnaikfarms.com/assets/images/logo.png" type="image/png">
+
+    <!-- Open Graph Tags for Social Media and Search Engine Previews -->
+    <meta property="og:title" content="Payment - Sarnaik Farms">
+    <meta property="og:description" content="Complete your payment securely with Sarnaik Farms. Ensure all payment details are correct and follow the instructions to finalize your purchase.">
+    <meta property="og:image" content="https://sarnaikfarms.com/assets/images/payment-preview.jpg">
+    <meta property="og:image:alt" content="Payment Page Preview for Sarnaik Farms">
+    <meta property="og:url" content="https://sarnaikfarms.com/payment.html">
+
+    <!-- Schema Markup for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Payment - Sarnaik Farms",
+      "description": "Complete your payment securely with Sarnaik Farms. Ensure all payment details are correct and follow the instructions to finalize your purchase.",
+      "url": "https://sarnaikfarms.com/payment.html",
+      "image": "https://sarnaikfarms.com/assets/images/payment-preview.jpg"
+    }
+    </script>
+
+    <!-- Fonts and Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mukta:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Teko:wght@300..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        body {
+
+
+            font-family: 'Teko', sans-serif;
+
+
+
+
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        #card-element {
+            margin-bottom: 20px;
+        }
+
+        #pay-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #pay-button:hover {
+            background-color: #45a049;
+        }
+
+        #error-message {
+            color: red;
+            text-align: center;
+        }
+
+        .product-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-info img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+        <div class="product-info">
+            <img id="product-image" src="" alt="Product Image">
+            <h2 id="product-name"></h2>
+            <p id="product-price"></p>
+        </div>
+        <form id="payment-form">
+            <div id="card-element"></div>
+            <button id="pay-button" type="button">Pay Now</button>
+            <div id="error-message"></div>
+        </form>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Initialize Stripe
+        const stripe = Stripe('pk_test_51PiDYURvvBvD9AXG10enU2afNEseTjFwxudPH1AO85o8gb2edPqtWwMeYQzMv7U5DyFmkWZGvLwI1Zxfoz5NFFbo00KgVTL6Wa');
+        const elements = stripe.elements();
+        const cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+
+        const errorMessage = document.getElementById('error-message');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Parse URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            const priceInPaise = urlParams.get('price');
+            const image = urlParams.get('image');
+
+            // Convert price from paise to rupees
+            const priceInRupees = (parseInt(priceInPaise, 10) / 100).toFixed(2);
+
+            // Display product details
+            if (name && priceInPaise && image) {
+                document.getElementById('product-name').textContent = name;
+                document.getElementById('product-price').textContent = `Price: ₹${priceInRupees}`;
+
+                const productImage = document.getElementById('product-image');
+                productImage.src = decodeURIComponent(image); // Decode URL-encoded image URL
+
+                // Fallback image
+                productImage.onerror = () => {
+                    console.error('Failed to load product image:', image);
+                    productImage.src = '../assets/images/placeholder.png'; // Correct path to your fallback image
+                };
+            }
+
+            // Add event listener to the Pay Now button
+            document.getElementById('pay-button').addEventListener('click', () => {
+                console.log("Starting checkout..."); // Debug log
+
+                // Create a PaymentIntent on the server
+                fetch('/create-payment-intent', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ amount: parseInt(priceInPaise, 10) })
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('PaymentIntent data:', data); // Debug log
+                        const { clientSecret } = data;
+
+                        // Confirm the card payment
+                        return stripe.confirmCardPayment(clientSecret, {
+                            payment_method: {
+                                card: cardElement,
+                                billing_details: {
+                                    name: 'Customer Name', // Update this if needed
+                                },
+                            },
+                        });
+                    })
+                    .then(result => {
+                        if (result.error) {
+                            console.error('Payment error:', result.error); // Debug log
+                            errorMessage.textContent = result.error.message;
+                        } else if (result.paymentIntent.status === 'succeeded') {
+                            // Payment was successful, redirect to success page
+                            window.location.href = '/success';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error handling payment:', error); // Debug log
+                        errorMessage.textContent = 'An error occurred while processing the payment.';
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>

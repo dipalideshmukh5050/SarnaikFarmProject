@@ -1,0 +1,894 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100vw;
+    max-width: 100%;
+    font-family: 'Teko', sans-serif;
+  }
+
+  body{
+    max-width: 100%;
+    max-width: 100vw;
+  }
+/* Navbar Container */
+.navbar-unique {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #d8f0fa;/* Light blue background */
+    padding: 15px 20px;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    height: 90px; /* Height for better logo visibility */
+}
+
+/* Navbar Menu */
+.menu-unique {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    animation: bounceIn 2s ease-out infinite; /* Apply bounce animation infinitely */
+}
+
+/* Navbar Links */
+.menu-unique a, .dropbtn-unique {
+    color: #020202; /* Black text */
+    font-weight: bold; /* Make text bold */
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    font-size: 20px;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 4px;
+}
+
+.menu-unique a:hover, .dropbtn-unique:hover {
+    color: #e91e63; /* Hover effect */
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.menu-unique a::after, .dropbtn-unique::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #f170bb; /* Underline effect */
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-unique a:hover::after, .dropbtn-unique:hover::after {
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+}
+
+/*  Visibility of Keshav Nagar Pedha */
+.menu-unique > a[href*="keshav-nagar-pedha"] {
+    display: block;
+    color: black; /*  text color is black */
+    background-color: transparent; /*  background is transparent */
+    padding: 14px 20px; /* Match padding of other menu items */
+    font-size: 20px; /*  font size is consistent */
+    font-weight: bold; /*  font weight is consistent */
+    text-decoration: none; /*  no underline */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-unique > a[href*="keshav-nagar-pedha"]:hover {
+    color: #f170bb; /* Hover effect */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown Button Styles */
+.dropbtn-unique {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: black; /* Black text for dropdown button */
+    transition: color 0.3s ease;
+}
+
+.dropdown-unique:hover .dropbtn-unique {
+    color: #f170bb; /* Hover effect for dropdown button */
+}
+
+/* Dropdown Content */
+.dropdown-content-unique {
+    display: none;
+    position: absolute;
+    background-color: #87ceeb; /* Black background for dropdown */
+    min-width: 220px;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    border-radius: 0px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(15px) scale(0.95); /* Start from below */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.dropdown-unique:hover .dropdown-content-unique {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Dropdown Links */
+.dropdown-content-unique a {
+    color: #080808; /* White text for dropdown links */
+    font-weight: bold;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content-unique a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #eb73af, #ffda79);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.dropdown-content-unique a:hover::before {
+    left: 0;
+}
+
+.dropdown-content-unique a:hover {
+    color: #fff;
+}
+
+
+
+
+
+/* Mobile View */
+@media (max-width: 768px) {
+    /* Adjust dropdown content to be more mobile-friendly */
+    .dropdown-content-unique {
+        min-width: 100%;
+        position: relative;
+        box-shadow: none;
+        transform: translateY(0) scale(1); /*  dropdown displays properly on mobile */
+        transition: none;
+    }
+
+    /*  dropdown button remains aligned for mobile */
+    .dropdown-unique {
+        width: 100%;
+    }
+
+    .dropdown-content-unique a {
+        padding: 12px;
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .dropbtn-unique {
+        font-size: 16px;
+        text-align: left;
+        width: 100%;
+    }
+}
+
+/* Bounce Animation for Navbar Menu */
+@keyframes bounceIn {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    20% {
+        transform: translateY(-20%);
+        opacity: 1;
+    }
+    40% {
+        transform: translateY(10%);
+    }
+    60% {
+        transform: translateY(-5%);
+    }
+    80% {
+        transform: translateY(2%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply bounce animation to navbar */
+.menu-unique {
+    animation: bounceIn 1s ease-out 10; /* Repeat animation 10 times */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sidebar styles */
+/* Sidebar styles */
+.sidebar-unique {
+    height: calc(100% - 70px); /* Adjusted to fit below the navbar with increased height */
+    width: 0;
+    position: fixed;
+    z-index: 1000; /*  it's above other elements */
+    top: 70px; /* Align directly below the navbar */
+    left: 0;
+    background-color: #030303;
+    overflow-x: hidden;
+    transition: width 0.1s ease; /* Faster transition for quicker closing */
+    padding-top: 20px; /* Adjusted padding */
+    color: white;
+}
+
+/* Sidebar links */
+.sidebar-unique a {
+    padding: 12px 8px 12px 24px; /* Adjusted padding */
+    text-decoration: none;
+    font-size: 16px; /* Adjusted font size for better readability */
+    color: #818181;
+    display: block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-unique a:hover {
+    color: #f362bc;
+    transform: translateX(5px); /* Less movement on hover */
+}
+
+/* Close button for sidebar */
+.closebtn-unique {
+    position: absolute;
+    top: 10px; /* Adjusted top margin */
+    right: 10px; /* Adjusted right margin */
+    font-size: 24px; /* Font size */
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.closebtn-unique:hover {
+    transform: rotate(90deg);
+}
+
+/* Toggle button for sidebar */
+.menu-toggle-unique {
+    display: block; /*  it's visible */
+    font-size: 24px; /* Increased font size */
+    cursor: pointer;
+    color: #050505;
+    background: none;
+    border: none;
+    padding-right: 13px; /* Adjusted padding */
+    margin: 0; /* Remove margin if it affects visibility */
+    transition: color 0.3s ease;
+    z-index: 1001; /*  it's above other elements */
+}
+
+.menu-toggle-unique:hover {
+    color: #f17cc1;
+}
+
+/* Sidebar open state */
+.sidebar-unique.open {
+    width: 250px; /* Increased width for mobile */
+}
+
+/* Icons container */
+.icons-unique {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Increased gap for spacing */
+}
+
+.icons-unique img {
+    height: 35px; /* Increased icon size */
+    width: auto;
+    cursor: pointer;
+    padding: 0 6px; /* Adjusted padding for separation */
+}
+
+/* Media query for laptop view (768px and above) */
+@media screen and (min-width: 768px) {
+    .menu-unique {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu-toggle-unique {
+        display: none; /* Hide toggle button on larger screens */
+    }
+
+    .sidebar-unique {
+        display: none;
+    }
+
+    .logo-unique img {
+        height: 80px; /* Logo height for laptop view */
+    }
+}
+
+/* Media query for mobile view (less than 768px) */
+@media screen and (max-width: 768px) {
+    .navbar-unique {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px; /* Slightly decreased padding */
+        height: 70px; /* Increased height for mobile view */
+    }
+
+    .logo-unique {
+        flex-shrink: 0;
+    }
+
+    .logo-unique img {
+        height: 55px; /* Logo height remains the same */
+        margin-right: 0; /* Adjusted for spacing */
+    }
+
+    .icons-unique {
+        display: flex;
+        align-items: center;
+        gap: 12px; /* Adjusted gap for better spacing */
+        order: 1; /*  icons appear before the toggle button */
+    }
+
+    .menu-toggle-unique {
+        display: block;
+        font-size: 24px; /* Increased font size */
+        margin-left: 10px; /* Added margin for spacing */
+        order: 2; /*  toggle button is on the far right */
+        z-index: 1001; /*  it's above other elements */
+    }
+
+    .menu-unique {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .sidebar-unique {
+        top: 70px; /* Align directly below the navbar with increased height */
+        width: 0;
+        padding-top: 20px; /* Adjusted padding for mobile view */
+    }
+
+    .sidebar-unique.open {
+        width: 250px; /* Increased width for mobile */
+    }
+}
+
+
+
+
+
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 500px) {
+    /* Container Styles */
+    #google_translate_element {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%; /* Adjusted width */
+        margin-right: 2px; /* Minimal margin */
+        z-index: 1000; /* Above other elements */
+    }
+
+    /* Dropdown Box Styles */
+    .goog-te-combo {
+        width: 45px; /* Adjusted dropdown width */
+        height: 14px; /* Adjusted height */
+        font-size: 3px; /* Smaller font size */
+        padding: 0;
+        margin: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 1px;
+        z-index: 1000; /* Above other elements */
+    }
+
+    /* Hide extra Google content */
+    .goog-te-gadget-simple {
+        font-size: 0; /* Hiding extra content */
+    }
+
+    /* Adjust the container */
+    .goog-te-gadget {
+        padding: 0;
+        margin: 0 auto;
+        z-index: 1000; /* Above other elements */
+    }
+
+    /* Hide the Google Translate Banner */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    body {
+        top: 0 !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Basic styles for cart sidebar */
+.cart-sidebar-unique {
+    height: 100%;
+    width: 280px; /* Decreased width for a more compact look */
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #ffffff; /* Clean white background */
+    box-shadow: -4px 0 8px rgba(0,0,0,0.2); /* Slightly stronger shadow for depth */
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+    z-index: 9999; /*  sidebar is on top of other content */
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+}
+
+/* Show sidebar when active */
+.cart-sidebar-unique.open {
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .cart-sidebar-unique {
+        width: 100%; /* Fullscreen width on mobile */
+        height: 100%; /* Fullscreen height on mobile */
+        left: 0; /* s the sidebar covers the full screen */
+        right: 0; /* s the sidebar covers the full screen */
+        top: 0; /* s the sidebar covers the full screen */
+    }
+}
+
+
+
+
+
+
+
+/* Header styles */
+.cart-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color:#d8f0fa; /* Dark background for the header */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Light shadow for the header */
+    border-bottom: 1px solid #444; /* Darker border for separation */
+}
+
+/* Icon styles */
+#cartIcon {
+    width: 24px; /* Smaller icon for a refined look */
+    height: 24px;
+}
+
+/* Close button styles */
+#closeCartSidebar {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+/* Content styles */
+#cartContent {
+    padding: 20px;
+    flex: 1; /* Allow content to grow and fill available space */
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    background-color: #f9f9f9; /* Light background for the content */
+}
+
+/* Empty message styles */
+#cartEmptyMessage {
+    color: #888;
+    text-align: center; /* Center text horizontally */
+    font-size: 18px; /* Slightly larger font size */
+    margin: 20px 0; /* Space around the message */
+}
+
+/* Cart items list styles */
+#cartSidebarItems {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex: 1; /* Allow the list to grow */
+}
+
+/* Cart item styles */
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px; /* Added padding for better spacing */
+    border-bottom: 1px solid #ddd; /* Light border for separation */
+    margin-bottom: 15px; /* Space between items */
+    background-color: #ffffff; /* White background for items */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Light shadow for depth */
+    text-align: center; /* Center align text */
+}
+
+/* Cart item image styles */
+.cart-item-image {
+    width: 80px; /* Consistent image size */
+    height: 80px;
+    object-fit: cover; /*  images cover the area without distortion */
+    margin: 0 auto 10px; /* Center image horizontally and add space below */
+    border-radius: 4px; /* Rounded corners for images */
+}
+
+/* Cart item details styles */
+.cart-item-details {
+    flex: 1;
+}
+
+/* Center align cart item name */
+.cart-item-name {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    font-weight: bold; /* Emphasize item name */
+    text-align: center; /* Center align text */
+}
+
+/* Center align cart item price */
+.cart-item-price {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    color: #555; /* Slightly darker color for price */
+    text-align: center; /* Center align text */
+}
+
+/* Center align cart item quantity controls */
+.cart-item-quantity {
+    display: flex;
+    justify-content: center; /* Center quantity controls horizontally */
+    margin-top: 10px; /* Space above quantity controls */
+}
+
+/* Quantity button styles */
+.quantity-btn {
+    background-color: transparent; /* Remove background */
+    color: #007bff; /* Blue color for buttons */
+    border: 1px solid #007bff; /* Blue border */
+    padding: 5px 8px; /* Adjusted padding for better size */
+    margin: 0 5px; /* Space between buttons */
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px; /* Consistent font size for buttons */
+    transition: background-color 0.2s, color 0.2s; /* Smooth transition */
+}
+
+.quantity-btn:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: white; /* White text on hover */
+}
+
+/* Remove button styles */
+.remove-btn {
+    background-color: #000000; /* Black color for remove button */
+    color: white;
+    border: none;
+    padding: 6px 10px; /* Larger padding for better click area */
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px; /* Consistent font size for buttons */
+    margin-top: 15px; /* Margin from the top for spacing */
+    transition: background-color 0.2s, opacity 0.2s; /* Smooth transition */
+    display: block; /*  remove button is block level for margin */
+    margin-left: auto; /* Center align remove button */
+    margin-right: auto; /* Center align remove button */
+}
+
+.remove-btn:hover {
+    background-color: #333; /* Darker black on hover */
+    opacity: 0.8; /* Slight opacity on hover */
+}
+
+/* Actions area styles */
+.cart-actions {
+    display: flex;
+    padding: 15px;
+    background-color: #ffffff; /* White background for action area */
+    border-top: 1px solid #ddd; /* Light border to separate actions from content */
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1); /* Light shadow for depth */
+}
+
+/* Button styles */
+#buyMoreProducts,
+#checkoutBtn {
+    flex: 1; /* Make both buttons grow equally */
+    text-align: center;
+    padding: 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Light shadow for buttons */
+    margin-right: 10px; /* Add margin to create a gap */
+    transition: opacity 0.2s, transform 0.2s; /* Smooth transitions */
+    font-size: 16px; /* Slightly larger font size for readability */
+}
+
+/* Remove margin from the last button */
+#checkoutBtn {
+    margin-right: 0;
+}
+
+/* Specific button colors */
+#buyMoreProducts {
+    background-color: #28a745; /* Green color for "Buy More Products" */
+}
+
+#checkoutBtn {
+    background-color: #007bff; /* Blue color for "Checkout" */
+}
+
+/* Button hover effects */
+#buyMoreProducts:hover,
+#checkoutBtn:hover {
+    opacity: 0.9; /* Slightly less opacity on hover for better visibility */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hide the "like or dislike" Google Translate popup */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+/* Translate widget */
+.translate-widget {
+    margin-bottom: 10px;
+}
+
+.translate-toggle-btn {
+    background-color: #070707;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.translate-toggle-btn:hover {
+    background-color: #eaf1ea;
+}
+
+@media screen and (max-width: 600px) {
+    .translate-toggle-btn {
+        padding: 8px 12px;  /* Decrease padding for smaller button */
+        font-size: 12px;    /* Decrease font size */
+        width: auto;
+        margin-left: 50px;  /* Auto width instead of full width */
+    }
+
+    .translate-widget {
+        margin-bottom: 15px; /* Adjust spacing for mobile */
+    }
+}
+
+/* Laptop view adjustments */
+@media screen and (min-width: 601px) {
+    .cart-sidebar-unique.open {
+        width: 550px; /* Fixed width for larger screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Style for the login button */
+.user-entry {
+    background-color: #080808; /* Green background */
+    border: none; /* No borders */
+    color: white; /* White text */
+    padding: 2px 15px; /* Padding around the text */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline from text */
+    display: inline-block; /* Make the button inline with other elements */
+    font-size: 16px; /* Text size */
+    margin: 4px 2px; /* Margin around the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for the button */
+.user-entry:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+/* Active effect for the button */
+.user-entry:active {
+    background-color: #388e3c; /* Even darker green on click */
+    transform: scale(0.98); /* Slightly smaller on click */
+}
+
+/* Mobile view adjustments */
+@media only screen and (max-width: 600px) {
+    .user-entry {
+        padding: 6px 12px; /* Smaller padding for mobile */
+        font-size: 14px; /* 14px font size */
+        border-radius: 6px; /* Slightly smaller rounded corners */
+        margin-left: 5px; /* Margin from the left */
+        margin-right: 5px; /* Margin from the right (optional) */
+    }
+}
+
+/* Shaking animation */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Apply shaking animation for 5 seconds */
+.shake-animation {
+    animation: shake 0.5s linear;
+}
+
+/* Control the animation cycle (shake for 5s, pause for 10s) */
+.shake-cycle {
+    animation: shake 0.5s linear 0s infinite alternate;
+}
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+    /* Container Styles */
+    #google_translate_element {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        margin-right: 5px; /* Decrease margin from the right */
+        z-index: 1000; /*  it's above other elements */
+    }
+
+    /* Dropdown Box Styles */
+    .goog-te-combo {
+        width: 60px; /* Further decrease width */
+        height: 20px; /* Further decrease height */
+        font-size: 6px; /* Smaller font size */
+        padding: 0px; /* Remove padding */
+        margin: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 2px; /* Smaller border radius */
+        z-index: 1000; /*  it's above other elements */
+    }
+
+    /* Hide extra Google content */
+    .goog-te-gadget-simple {
+        font-size: 0;
+    }
+
+    /* Adjust the container */
+    .goog-te-gadget {
+        padding: 0;
+        margin: 0 auto;
+        z-index: 1000; /*  it's above other elements */
+    }
+
+    /* Hide the Google Translate Banner */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    body {
+        top: 0 !important;
+    }
+
+    /* Adjust position of the sidebar toggle button */
+    .sidebar-toggle-button {
+        position: relative;
+        z-index: 1001; /*  it's above Google Translate widget */
+        margin-left: 10px; /* Adjust margin if needed */
+    }
+}

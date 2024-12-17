@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Learn about Sarnaik Farms, offering premium dairy products like Pedha, Dahi, Shrikhand, and more. Discover our mission and values on our About Us page.">
+
+  <title>About Us | Sarnaik Farms</title>
+
+  <!-- Favicon for Browser Tab and Search Engine Display -->
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+
+  <!-- Open Graph Tags for Social Media and Search Engine Previews -->
+  <meta property="og:title" content="About Us | Sarnaik Farms">
+  <meta property="og:description" content="Discover Sarnaik Farms, a leading provider of high-quality dairy products including Pedha, Dahi, and Shrikhand. Learn more about our mission on our About Us page.">
+  <meta property="og:image" content="../assets/images/logo.png">
+  <meta property="og:image:alt" content="Sarnaik Farms Logo">
+  <meta property="og:url" content="https://sarnaikfarms.com/about/about.html">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://sarnaikfarms.com/about/about.html">
+
+  <!-- Schema Markup for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sarnaik Farms",
+    "url": "https://sarnaikfarms.com/about/about.html",
+    "logo": "../assets/images/logo.png",
+    "description": "Sarnaik Farms is dedicated to providing top-quality dairy products and supporting local farmers."
+  }
+  </script>
+
+  <!-- Robots Meta Tag -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts and Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mukta:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Teko:wght@300..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Local Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../about/about-us.css">
+
+  <!-- JavaScript Files -->
+  <script src="../assets/js/translate.js" defer></script>
+  <script src="../assets/js/toggle.js" defer></script>
+  <script src="../assets/js/swipe.js" defer></script>
+  <script src="../assets/js/add_to_cart.js" defer></script>
+  <script src="../assets/js/text.js" defer></script>
+</head>
+
+<header>
+  <nav class="navbar-unique">
+    <div class="logo-unique">
+      <a href="../index.html"><img src="../assets/images/logo.png" alt="Sarnaik Farms Logo"></a>
+    </div>
+
+    <div class="menu-unique">
+      <div class="dropdown-unique">
+        <button class="dropbtn-unique">About</button>
+        <div class="dropdown-content-unique">
+          <a href="../about/about.html">About Us</a>
+          <a href="../about/our-story.html">Our Story</a>
+          <a href="../about/contact-us.html">Contact Us</a>
+        </div>
+      </div>
+      <div class="dropdown-unique">
+        <button class="dropbtn-unique">Products</button>
+        <div class="dropdown-content-unique">
+          <a href="../products/products.html">Products</a>
+          <!--  <a href="../products/agriculture.html">Agriculture</a>-->
+        </div>
+      </div>
+      <div class="dropdown-unique">
+        <button class="dropbtn-unique">Food Safety</button>
+        <div class="dropdown-content-unique">
+          <a href="../food-safety/our-standards.html">Our Standards</a>
+          <!--  <a href="../food-safety/traceability.html">Traceability</a>-->
+        </div>
+      </div>
+      <div class="dropdown-unique">
+        <button class="dropbtn-unique">PR Media</button>
+        <div class="dropdown-content-unique">
+          <!--    <a href="../media/news.html">News</a>-->
+          <a href="../media/gallery.html">Gallery</a>
+        </div>
+      </div>
+      <a href="../Keshav-Nagar-Pedha/keshav-nagar-pedha.html" class="menu-item-unique">Keshav Nagar Pedha</a>
+    </div>
+
+    <div class="menu-toggle-unique" onclick="toggleSidebarUnique()">
+      <span>&#9776;</span>
+    </div>
+
+    <div class="icons-unique">
+
+      <a href="javascript:void(0)" onclick="openCartSidebarUnique()"><img src="../assets/images/add.png"
+        alt="Cart" style="height: 35px; width: auto; font-weight: bold;"></a>
+    </div>
+    <button class="user-entry" onclick="window.location.href='../login.html'">Login</button>
+    <div id="google_translate_element"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'x-default', // Set to 'x-default' so English appears in the dropdown
+      includedLanguages: 'en,mr,hi,pa,mai', // English, Marathi, Hindi, Punjabi, Malwani (Maithili as closest)
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+ </nav>
+</header>
+</body>
+
+<!-- Sidebar for cart -->
+<div id="cartSidebarUnique" class="cart-sidebar-unique">
+  <div class="cart-sidebar-header">
+    <img src="../assets/images/shopping-cart.png" alt="Cart" id="cartIcon" class="cart-icon">
+    <a href="javascript:void(0)" id="closeCartSidebar" class="close-btn" onclick="closeCartSidebar()">×</a>
+  </div>
+  <div id="cartContent" class="cart-content">
+    <p id="cartEmptyMessage">Your cart is empty</p>
+    <ul id="cartSidebarItems" class="cart-items-list"></ul>
+    <div class="cart-actions">
+      <a href="../products/products.html" id="buyMoreProducts" class="buy-products-btn">Buy More Products</a>
+      <a href="javascript:void(0)" id="checkoutBtn" class="checkout-btn">Checkout</a>
+    </div>
+  </div>
+</div>
+
+
+
+<aside class="sidebar-unique">
+  <a href="javascript:void(0)" class="closebtn-unique" onclick="closeSidebarUnique()">&times;</a>
+  <a href="../index.html">Home</a>
+  <a href="../about/about.html">About Us</a>
+  <a href="../about/our-story.html">Our Story</a>
+  <a href="../about/contact-us.html">Contact Us</a>
+  <a href="../products/products.html">Products</a>
+  <!--   <a href="../products/agriculture.html">Agriculture</a>-->
+  <a href="../food-safety/our-standards.html">Our Standards</a>
+  <!--  <a href="../food-safety/traceability.html">Traceability</a>-->
+  <!-- <a href="../media/news.html">News</a>-->
+  <a href="../media/gallery.html">Gallery</a>
+  <a href="../Keshav-Nagar-Pedha/keshav-nagar-pedha.html">Keshav Nagar Pedha</a> <!-- New menu item in sidebar -->
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="about-us-section">
+  <div id="about-us-container" class="container py-5">
+    <div class="row align-items-center">
+      <div id="about-image-col" class="col-12 col-lg-6">
+        <img id="about-image" class="img-fluid rounded" src="../assets/images/welcome.jpg" alt="About Sarnaik Farms">
+      </div>
+      <div id="about-text-col" class="col-12 col-lg-6">
+        <div id="about-text-container">
+          <h2 id="about-heading">Who Are We?</h2>
+          <h3 id="about-subheading">Innovative Farming, Superior Dairy</h3>
+          <p id="about-lead">At Sarnaik Farms, excellence is our tradition. Renowned for our commitment to superior farming practices and dairy products, we stand as a beacon of quality and innovation in the industry. Our farm is a testament to the harmonious balance between nature and modern agricultural techniques, ensuring that every product we deliver is of the highest caliber.</p>
+          <p id="about-description">Our dedication to farming excellence is reflected in every aspect of our operations. We embrace sustainable farming methods that enrich the soil, conserve resources, and enhance the quality of our produce. By integrating cutting-edge technology with time-honored practices, we continuously push the boundaries of agricultural innovation.</p>
+          <p id="about-description">At Sarnaik Dairy, our passion for dairy products shines through. From farm-fresh milk to our premium range of dairy delights including dahi, shrikhand, lassi, and pedha, each product is crafted with meticulous care and the finest ingredients. Our dairy is celebrated for its exceptional freshness and rich flavor, embodying the essence of our farm's dedication to quality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="responsive-container-block bigContainer">
+  <div class="responsive-container-block Container bottomContainer">
+    <div class="ultimateImg">
+      <!-- The main image container -->
+      <img class="mainImg" id="mainImage" src="../assets/images/9.jpg" alt="Sarnaik Farms">
+      <div class="purpleBox">
+        <p class="purpleText">
+          At Sarnaik Farms, we craft pure, naturally made dairy products with a focus on quality. Our FSSAI
+          certification underscores our commitment to freshness and excellence.
+        </p>
+        <img class="stars" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/mp5.svg" alt="Stars">
+      </div>
+    </div>
+    <div class="allText bottomText">
+      <p class="text-blk headingText">
+        Products
+      </p>
+      <p class="text-blk subHeadingText">
+        Sarnaik Farms: Pioneering Agriculture and Dairy Solutions for a Brighter Future
+      </p>
+      <p class="text-blk description">
+        At Sarnaik Farms, "Our focus is to make the farmers of the district financially capable and progressive." We
+        believe in fostering growth and sustainability within the agricultural community. By providing the necessary
+        resources and support, we aim to uplift the livelihoods of farmers, ensuring their continued success for
+        generations to come.
+
+        Sarnaik Dairy, established in 2020, plays a crucial role in this mission. We collect milk from 35 villages,
+        involving 400 milk-producing farmers, including 110 women. Our dairy products, ranging from dahi, shrikhand,
+        paneer, pedha, and ghee to lassi, mattha, and tak, are processed and distributed through our two sell outlets.
+      </p>
+      <a class="explore" href="../products/products.html">
+        View Products
+      </a>
+    </div>
+  </div>
+</div>
+<section class="about-us">
+  <div class="about">
+    <img src="../assets/images/about_sarnaik.jpeg" class="pic" alt="Agriculture at Sarnaik Farms" />
+    <div class="text">
+      <h2>Farming</h2>
+      <h5>Empowering Farmers & <span>Promoting Sustainable Agriculture</span></h5>
+      <p>
+        At Sarnaik Farms, we are deeply committed to supporting farmers through every stage of the agricultural journey.
+        From seed selection and soil preparation to harvest and distribution, we are with our farmers at every step,
+        providing
+        them with the tools, knowledge, and support they need to cultivate high-quality crops. We believe in sustainable
+        farming practices
+        that not only improve yields but also protect the environment, ensuring a better future for generations to come.
+        Together,
+        we are dedicated to making agriculture more efficient, sustainable, and prosperous for all.
+      </p>
+      <div class="data">
+        <a href="" class="hire">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const images = [
+      '../assets/images/2.jpg',
+      '../assets/images/5.jpg',
+      '../assets/images/6.jpg',
+      '../assets/images/7.jpg',
+      '../assets/images/8.jpg',
+      '../assets/images/9.jpg',
+    ];
+
+    let currentIndex = 0;
+    const imageElement = document.getElementById('mainImage');
+
+    if (imageElement) {
+      function changeImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        imageElement.src = images[currentIndex];
+      }
+
+      setInterval(changeImage, 3000); // Change image every 3 seconds (adjust as needed)
+
+      // Optional: Handle window resize to ensure image is responsive
+      window.addEventListener('resize', () => {
+        imageElement.style.width = '100%'; //  the image fills its container
+        imageElement.style.height = 'auto'; // Maintain aspect ratio
+      });
+
+      // Initial setup for responsiveness
+      imageElement.style.width = '100%'; //  the image fills its container
+      imageElement.style.height = 'auto'; // Maintain aspect ratio
+    } else {
+      console.error('Image element with id "mainImage" not found.');
+    }
+  });
+
+</script>
+
+<footer class="custom-footer">
+  <div class="custom-container">
+    <div class="custom-row">
+      <div class="custom-footer-col custom-company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../about/about.html">About Us</a></li>
+          <li><a href="../products/products.html">Our Products</a></li>
+          <li><a href="../food-safety/our-standards.html">Our Standards</a></li>
+          <li><a href="../media/gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="custom-footer-col custom-products">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="../products/products.html">Keshav Nagar Pedha</a></li>
+          <li><a href="../products/products.html">Dahi</a></li>
+          <li><a href="../products/products.html">Shrikhand</a></li>
+          <li><a href="../products/products.html">Lassi</a></li>
+          <li><a href="../products/products.html">Matha</a></li>
+        </ul>
+      </div>
+
+      <div class="custom-footer-col custom-contact">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="tel:+91763647726">9763647726</a></li>
+          <li><a href="mailto:sarnaikdairy2020@gmail.com">sarnaikdairy2020@gmail.com</a></li>
+          <li><a href="https://www.google.com/maps?q=At.+post.+Chinchambapen+Ta.+Risod+Dist.+Washim+444505"
+              target="_blank">At. post. Chinchambapen Ta. Risod Dist. Washim 444505</a></li>
+          <li><a href="mailto:sarnaiksfpc@gmail.com">sarnaiksfpc@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="custom-footer-col custom-follow">
+        <h4>Follow Us</h4>
+        <div class="custom-social-links">
+          <a href="https://www.facebook.com/">
+            <img src="../assets/images/facebook.png" alt="Facebook">
+          </a>
+          <a href="https://www.youtube.com/@SARNAIK_FARMS">
+            <img src="../assets/images/youtube.png" alt="YouTube">
+          </a>
+          <a href="https://www.instagram.com/sarnaikdairy07?igsh=OHI3YTZza2k5d25v&utm_source=qr">
+            <img src="../assets/images/instagram.png" alt="Instagram">
+          </a>
+          <a href="https://www.twitter.com/">
+            <img src="../assets/images/twitter.png" alt="Twitter">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</html>

@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Explore the story of Sarnaik Farms, a leading provider of agricultural and dairy products. Learn about our mission to support farmers and deliver quality products such as Pedha, Dahi, Shrikhand, and more.">
+
+  <title>Our Story | Sarnaik Farms</title>
+
+  <!-- Favicon for Browser Tab and Search Engine Display -->
+  <link rel="icon" href="https://sarnaikfarms.com/assets/images/logo.png" type="image/png">
+
+  <!-- Open Graph Tags for Social Media and Search Engine Previews -->
+  <meta property="og:title" content="Our Story | Sarnaik Farms">
+  <meta property="og:description" content="Explore the story of Sarnaik Farms, our commitment to agriculture, and how we support farmers with quality dairy products.">
+  <meta property="og:image" content="https://sarnaikfarms.com/assets/images/logo.png">
+  <meta property="og:image:alt" content="Sarnaik Farms Logo">
+  <meta property="og:url" content="https://sarnaikfarms.com/about/our-story.html">
+
+  <!-- Schema Markup for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sarnaik Farms",
+    "url": "https://sarnaikfarms.com/about/our-story.html",
+    "logo": "https://sarnaikfarms.com/assets/images/logo.png"
+  }
+  </script>
+
+  <!-- Fonts and Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mukta:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Teko:wght@300..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Local Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../about/about.css">
+
+  <!-- JavaScript Files -->
+  <script src="../assets/js/translate.js"></script>
+  <script src="../assets/js/toggle.js"></script>
+  <script src="../assets/js/swipe.js"></script>
+  <script src="../assets/js/add_to_cart.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar-unique">
+      <div class="logo-unique">
+        <a href="../index.html"><img src="../assets/images/logo.png" alt="Sarnaik Farms Logo"></a>
+      </div>
+
+      <div class="menu-unique">
+        <div class="dropdown-unique">
+          <button class="dropbtn-unique">About</button>
+          <div class="dropdown-content-unique">
+            <a href="../about/about.html">About Us</a>
+            <a href="../about/our-story.html">Our Story</a>
+            <a href="../about/contact-us.html">Contact Us</a>
+          </div>
+        </div>
+        <div class="dropdown-unique">
+          <button class="dropbtn-unique">Products</button>
+          <div class="dropdown-content-unique">
+            <a href="../products/products.html">Products</a>
+        <!--    <a href="../products/agriculture.html">Agriculture</a>-->
+          </div>
+        </div>
+        <div class="dropdown-unique">
+          <button class="dropbtn-unique">Food Safety</button>
+          <div class="dropdown-content-unique">
+            <a href="../food-safety/our-standards.html">Our Standards</a>
+         <!--   <a href="../food-safety/traceability.html">Traceability</a>-->
+          </div>
+        </div>
+        <div class="dropdown-unique">
+          <button class="dropbtn-unique">PR Media</button>
+          <div class="dropdown-content-unique">
+         <!--   <a href="../media/news.html">News</a>-->
+            <a href="../media/gallery.html">Gallery</a>
+          </div>
+        </div>
+        <a href="../Keshav-Nagar-Pedha/keshav-nagar-pedha.html" class="menu-item-unique">Keshav Nagar Pedha</a>
+      </div>
+
+      <div class="menu-toggle-unique" onclick="toggleSidebarUnique()">
+        <span>&#9776;</span>
+      </div>
+
+      <div class="icons-unique">
+       
+        <a href="javascript:void(0)" onclick="openCartSidebarUnique()"><img src="../assets/images/add.png"
+          alt="Cart" style="height: 35px; width: auto; font-weight: bold;"></a>
+      </div>
+      <button class="user-entry" onclick="window.location.href='../login.html'">Login</button>
+      <div id="google_translate_element"></div>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'x-default', // Set to 'x-default' so English appears in the dropdown
+            includedLanguages: 'en,mr,hi,pa,mai', // English, Marathi, Hindi, Punjabi, Malwani (Maithili as closest)
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+        }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      
+    </nav>
+  </header>
+</body>
+
+<!-- Sidebar for cart -->
+<div id="cartSidebarUnique" class="cart-sidebar-unique">
+  <div class="cart-sidebar-header">
+    <img src="../assets/images/shopping-cart.png" alt="Cart" id="cartIcon" class="cart-icon">
+    <a href="javascript:void(0)" id="closeCartSidebar" class="close-btn" onclick="closeCartSidebar()">×</a>
+  </div>
+  <div id="cartContent" class="cart-content">
+    <p id="cartEmptyMessage">Your cart is empty</p>
+    <ul id="cartSidebarItems" class="cart-items-list"></ul>
+    <div class="cart-actions">
+      <a href="../products/products.html" id="buyMoreProducts" class="buy-products-btn">Buy More Products</a>
+      <a href="javascript:void(0)" id="checkoutBtn" class="checkout-btn">Checkout</a>
+    </div>
+  </div>
+</div>
+
+
+  <aside class="sidebar-unique">
+    <a href="javascript:void(0)" class="closebtn-unique" onclick="closeSidebarUnique()">&times;</a>
+    <a href="../index.html">Home</a>
+    <a href="../about/about.html">About Us</a>
+    <a href="../about/our-story.html">Our Story</a>
+    <a href="../about/contact-us.html">Contact Us</a>
+    <a href="../products/products.html">Products</a>
+   <!-- <a href="../products/agriculture.html">Agriculture</a>-->
+    <a href="../food-safety/our-standards.html">Our Standards</a>
+ <!--   <a href="../food-safety/traceability.html">Traceability</a>-->
+   <!-- <a href="../media/news.html">News</a>-->
+    <a href="../media/gallery.html">Gallery</a>
+    <a href="../Keshav-Nagar-Pedha/keshav-nagar-pedha.html">Keshav Nagar Pedha</a>
+ </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+     <!-- Milestones Section -->
+     <section id="milestones">
+        <!-- Hero Image and Title -->
+        <div class="hero-container">
+            <img src="../assets/images/b15.jpg" alt="Milestones Hero Image" class="hero-img">
+            
+        </div>
+
+        <!-- Description Section -->
+        <div class="description-section">
+            <p class="description-text">
+                Our first tiny steps that transformed into a meaningful journey with inspiring milestones.
+            </p>
+        </div>
+
+        <!-- Horizontal Dotted Line -->
+        <hr class="dotted-line">
+
+        <!-- Content with Vertical Separator Line (Image Left, Description Right) -->
+        <div class="content-separator">
+            <div class="content">
+                <!-- Left Section with Image -->
+                <div class="image-section">
+                    <img src="../assets/images/abt4.1.jpeg" alt="2010-2014" class="section-img">
+                </div>
+
+                <!-- Vertical Separator Line -->
+                <div class="separator-line"></div>
+
+                <!-- Right Section with Description -->
+                <div class="description-section">
+                    <h3>AUGUST 2020</h3>
+                    <p>
+                        In August 2020, we embarked on our journey with a modest start. Our launch on the 21st marked the beginning of our commitment to supporting local farmers. At this initial stage, we had 2 productive farmers contributing to our daily milk collection of 2 liters. We employed 2 dedicated employees and 2 farmers, totaling a small but passionate team of 4. This was just the beginning of our mission to create a sustainable and productive dairy ecosystem. During this period, we focused on building strong relationships with local farmers and establishing the necessary infrastructure for our operations.
+                        <br><br>
+                       </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content with Vertical Separator Line (Image Right, Description Left) -->
+        <div class="content-separator reverse">
+            <div class="content">
+                <!-- Left Section with Description -->
+                <div class="description-section">
+                      <h3>DECEMBER 2020</h3>
+                    <p>
+                        By December 2020, our operations had expanded significantly. We grew our team to include 12 productive farmers and increased our milk collection to 40 liters per day. This growth also led to an increase in employment, bringing our total to 14. Our success during this period was a testament to the dedication of our team and the trust of our local farmers, laying a strong foundation for future growth. We began exploring new markets and introduced innovative practices that improved both efficiency and product quality. This period marked our transition from a local initiative to a more prominent player in the dairy industry, setting the stage for further expansion and impact.
+                        <br><br>
+                      </p>
+                </div>
+
+                <!-- Vertical Separator Line -->
+                <div class="separator-line"></div>
+
+                <!-- Right Section with Image -->
+                <div class="image-section">
+                    <img src="../assets/images/2 Year post.jpg" alt="Image" class="section-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Content with Vertical Separator Line (Image Left, Description Right) -->
+        <div class="content-separator">
+            <div class="content">
+                <!-- Left Section with Image -->
+                <div class="image-section">
+                    <img src="../assets/images/FLEX BORD 4x6_Milk Prosecing Unit_page-0001.jpg" alt="2018-2020" class="section-img">
+                </div>
+
+                <!-- Vertical Separator Line -->
+                <div class="separator-line"></div>
+
+                <!-- Right Section with Description -->
+                <div class="description-section">
+                    <h3>DECEMBER 2021</h3>
+                    <p>
+                        In December 2021, we reached a major milestone with 120 productive farmers, including 15 from a nearby village. Our daily milk collection surged to 300 liters, supported by the establishment of our first sales center and milk collection center. We also introduced a processing unit with a 40-liter capacity, marking the beginning of our commitment to rigorous chemical testing of milk. This period marked significant progress in our quest to enhance quality and expand our reach. Despite the challenges posed by the pandemic, our team remained resilient, implementing new strategies to maintain growth and ensure the safety and quality of our products.
+                        <br><br>
+                        </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content with Vertical Separator Line (Image Right, Description Left) -->
+        <div class="content-separator reverse">
+            <div class="content">
+                <!-- Left Section with Description -->
+                <div class="description-section">
+                    <h3>DECEMBER 2022</h3>
+                    <p>
+                        By December 2022, our company had made remarkable strides. We expanded our network to include 340 productive farmers, with 40 from a neighboring village, and increased our daily milk collection to 800 liters. We established an additional milk collection center and continued to utilize our processing unit with a 40-liter capacity. Regular chemical testing was implemented, ensuring product quality. We also began the Keshavnagar herd branding and sales in Maharashtra and established the Saranaik Farmer Producer Company, which grew to 443 members from 40 villages. This period was crucial in solidifying our presence in the dairy industry, showcasing our commitment to quality and community development.
+                        <br><br>
+                        </p>
+                </div>
+
+                <!-- Vertical Separator Line -->
+                <div class="separator-line"></div>
+
+                <!-- Right Section with Image -->
+                <div class="image-section">
+                    <img src="../assets/images/WhatsApp Image 2024-07-11 at 13.08.44.jpeg" alt="2021 and beyond" class="section-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Content with Vertical Separator Line (Image Left, Description Right) -->
+        <div class="content-separator reverse">
+            <div class="content">
+                <!-- Left Section with Image -->
+                <div class="image-section">
+                    <img src="../assets/images/WhatsApp Image 2024-07-11 at 13.08.44.jpeg" alt="2024" class="section-img">
+                </div>
+
+                <!-- Vertical Separator Line -->
+                <div class="separator-line"></div>
+
+                <!-- Right Section with Description -->
+                <div class="description-section">
+                    <h3>DECEMBER 2023 </h3>
+                    <p>
+                        By December 2023, Sahyadri Farms had achieved another significant milestone. We expanded our network to include 443 productive farmers, with a notable increase in our daily milk collection reaching 1600 liters. Our growth was marked by the opening of an additional sales center and milk collection center, as well as upgrading our processing unit to a 540-liter capacity. We continued our commitment to quality with regular chemical testing and saw substantial success with the Keshavnagar Pedha brand. Additionally, we made a strategic investment by purchasing 1 acre of land at Chinkobapen from the Farmers Producers Company. This period underscores our sustained growth and dedication to excellence in the dairy industry.
+                        <br><br>
+                         </p>
+                    
+                </div>
+            </div>
+        </div>
+    
+        <footer class="custom-footer">
+          <div class="custom-container">
+            <div class="custom-row">
+              <div class="custom-footer-col custom-company">
+                <h4>Company</h4>
+                <ul>
+                  <li><a href="../about/about.html">About Us</a></li>
+                  <li><a href="../products/products.html">Our Products</a></li>
+                  <li><a href="../food-safety/our-standards.html">Our Standards</a></li>
+                  <li><a href="../media/gallery.html">Gallery</a></li>
+                </ul>
+              </div>
+        
+              <div class="custom-footer-col custom-products">
+                <h4>Products</h4>
+                <ul>
+                  <li><a href="../products/products.html">Keshav Nagar Pedha</a></li>
+                  <li><a href="../products/products.html">Dahi</a></li>
+                  <li><a href="../products/products.html">Shrikhand</a></li>
+                  <li><a href="../products/products.html">Lassi</a></li>
+                  <li><a href="../products/products.html">Matha</a></li>
+                </ul>
+              </div>
+        
+              <div class="custom-footer-col custom-contact">
+                <h4>Contact Us</h4>
+                <ul>
+                  <li><a href="tel:+91763647726">9763647726</a></li>
+                  <li><a href="mailto:sarnaikdairy2020@gmail.com">sarnaikdairy2020@gmail.com</a></li>
+                  <li><a href="https://www.google.com/maps?q=At.+post.+Chinchambapen+Ta.+Risod+Dist.+Washim+444505" target="_blank">At. post. Chinchambapen Ta. Risod Dist. Washim 444505</a></li>
+                  <li><a href="mailto:sarnaiksfpc@gmail.com">sarnaiksfpc@gmail.com</a></li>
+                </ul>
+              </div>
+        
+              <div class="custom-footer-col custom-follow">
+                <h4>Follow Us</h4>
+                <div class="custom-social-links">
+                  <a href="https://www.facebook.com/">
+                    <img src="../assets/images/facebook.png" alt="Facebook">
+                  </a>
+                  <a href="https://www.youtube.com/@SARNAIK_FARMS">
+                    <img src="../assets/images/youtube.png" alt="YouTube">
+                  </a>
+                  <a href="https://www.instagram.com/sarnaikdairy07?igsh=OHI3YTZza2k5d25v&utm_source=qr">
+                    <img src="../assets/images/instagram.png" alt="Instagram">
+                  </a>
+                  <a href="https://www.twitter.com/">
+                    <img src="../assets/images/twitter.png" alt="Twitter">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+  
+      
+
+    </body>
+  
+  </html>

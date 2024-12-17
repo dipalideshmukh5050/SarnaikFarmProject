@@ -1,0 +1,331 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Teko', sans-serif;
+}
+body {
+  background-image: url('../assets/images/b4.jpg');
+  font-family: sans-serif; /* Changed to sans-serif */
+}
+
+/* Hero Section */
+.hero-container {
+  position: relative;
+  background-color: #00c0ef; /* Changed color */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero-container:hover .hero-img {
+  transform: scale(1.05);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 0 2rem;
+}
+
+.hero-title {
+  font-size: 1.5rem;
+  font-weight: bold; /* Font weight set to bold */
+  text-transform: uppercase;
+  margin: 0;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+.hero-title:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Description Section */
+.description-section {
+  text-align: justify;
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.description-text {
+  font-style: italic;
+  color: #070707; /* Changed color */
+  font-size: 24px;
+  line-height: 1.5;
+  margin: 0 auto;
+
+  max-width: 800px;
+  transition: color 0.3s ease-in-out;
+  font-weight: bold; /* Font weight set to bold */
+}
+
+
+.description-text:hover {
+  color: #00a4d3; /* Slightly darker shade */
+}
+
+/* Animated Header */
+.animated-header {
+  animation: fadeInUp 1s ease-out, highlight 3s ease infinite;
+  font-size: 1.5rem;
+  font-weight: bold; /* Font weight set to bold */
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #00c0ef; /* Changed color */
+}
+
+/* Animated Paragraph */
+.animated-paragraph {
+  animation: fadeInUp 1s ease-out 0.5s;
+  font-size: 2em;
+  line-height: 1.6;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: #555;
+  font-weight: bold; /* Font weight set to bold */
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes highlight {
+  0% {
+    color: #333;
+  }
+  50% {
+    color: #00c0ef; /* Changed color */
+    text-shadow: 0 0 10px rgba(0, 192, 239, 0.5);
+  }
+  100% {
+    color: #333;
+    text-shadow: none;
+  }
+}
+
+/* Horizontal Dotted Line */
+.dotted-line {
+  border: none;
+  border-top: 2px dotted #00c0ef; /* Changed color */
+  margin: 2rem auto;
+  width: 80%;
+}
+
+/* Content Separator */
+.content-separator {
+  display: flex;
+  align-items: flex-start;
+  margin: 2rem auto;
+  position: relative;
+  max-width: 1200px;
+  width: 90%;
+}
+
+/* Content Styles */
+.content {
+  background-image: url('../assets/images/b4.jpg');
+  display: flex;
+  background-size: cover; 
+  background-attachment: fixed;
+  background-repeat: no-repeat; 
+  background-position: center;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Description Section */
+.description-section {
+  flex: 1;
+  font-size: 18px;
+  padding: 2rem;
+  color: #333;
+}
+
+.description-section h3 {
+  font-size: 24px;
+  margin: 0;
+  color: #0d0e0d; /* Custom color */
+  font-weight: bold; /* Bold text */
+  padding-top: 50px;
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInUp 2s ease-in-out;
+  position: relative;
+}
+.description-section h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(238, 5, 5, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: glowing 1.5s infinite ease-in-out;
+}
+.section-text {
+  font-size: 18px;
+  line-height: 1.8;
+
+  margin: 0;
+  text-align: justify;
+  animation: fadeInUp 1s ease-out 0.5s;
+  font-weight: bold; /* Font weight set to bold */
+}
+
+/* Image Section */
+.image-section {
+  flex: 1;
+  padding: 1rem;
+}
+
+.section-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.section-img:hover {
+  transform: rotate(3deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+@media only screen and (max-width: 600px) {
+  .description-section {
+      font-size: 14px; /* Font size for mobile view */
+  }
+}
+/* Separator Line */
+.separator-line {
+  width: 2px;
+  background-color: #00c0ef; /* Changed color */
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Reverse Layout for Right Image and Left Description */
+.content-separator.reverse {
+  flex-direction: row-reverse;
+}
+
+.content-separator.reverse .separator-line {
+  left: 50%;
+  transform: translateX(50%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-img {
+    height: 300px;
+  }
+
+  .description-text {
+    font-size: 14px; /* Adjust font size */
+    margin-bottom: 15px; /* Adjust margin */
+    text-align: justify;
+  }
+
+  .content-separator {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .separator-line {
+    display: none;
+  }
+
+  .image-section,
+  .description-section {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .section-img {
+    height: auto;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+  .image-section {
+    order: 1;
+  }
+  .description-section {
+    order: 2;
+  }
+}
+
+/* Additional Mobile Styles */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .description-text {
+    font-size: 1.2rem;
+  }
+
+  .description-section h3 {
+    font-size: 16px;
+  }
+
+}
+
+/* Carousel Styles */
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 100%;
+  height: 600px;
+  margin: auto;
+}
+
+/* Mobile Carousel Adjustments */
+@media (max-width: 768px) {
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    height: 300px;
+  }
+}

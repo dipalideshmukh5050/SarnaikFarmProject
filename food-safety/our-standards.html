@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Learn about Sarnaik Farms' rigorous standards for food safety and quality. Discover how we ensure the highest quality in our agricultural and dairy products.">
+
+    <title>Our Standards | Sarnaik Farms</title>
+
+    <!-- Favicon for Browser Tab and Search Engine Display -->
+    <link rel="icon" href="https://sarnaikfarms.com/assets/images/logo.png" type="image/png">
+
+    <!-- Open Graph Tags for Social Media and Search Engine Previews -->
+    <meta property="og:title" content="Our Standards | Sarnaik Farms">
+    <meta property="og:description" content="Learn about Sarnaik Farms' rigorous standards for food safety and quality. Discover how we ensure the highest quality in our agricultural and dairy products.">
+    <meta property="og:image" content="https://sarnaikfarms.com/assets/images/logo.png">
+    <meta property="og:image:alt" content="Sarnaik Farms Logo">
+    <meta property="og:url" content="https://sarnaikfarms.com/food-safety/our-standards.html">
+
+    <!-- Schema Markup for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Sarnaik Farms",
+      "url": "https://sarnaikfarms.com/food-safety/our-standards.html",
+      "logo": "https://sarnaikfarms.com/assets/images/logo.png",
+      "description": "Sarnaik Farms adheres to strict food safety standards to ensure high-quality agricultural and dairy products."
+    }
+    </script>
+
+    <!-- Fonts and Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mukta:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Teko:wght@300..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Local Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../food-safety/standard.css">
+
+    <!-- JavaScript Files -->
+    <script src="../assets/js/translate.js"></script>
+    <script src="../assets/js/toggle.js"></script>
+    <script src="../assets/js/swipe.js"></script>
+    <script src="../assets/js/add_to_cart.js"></script>
+</head>
+  <header>
+    <nav class="navbar-unique">
+      <div class="logo-unique">
+        <a href="../index.html"><img src="../assets/images/logo.png" alt="Sarnaik Farms Logo"></a>
+      </div>
+
+      <div class="menu-unique">
+        <div class="dropdown-unique">
+          <button class="dropbtn-unique">About</button>
+          <div class="dropdown-content-unique">
+            <a href="../about/about.html">About Us</a>
+            <a href="../about/our-story.html">Our Story</a>
+            <a href="../about/contact-us.html">Contact Us</a>
+          </div>
+        </div>
+        <div class="dropdown-unique">
+          <button class="dropbtn-unique">Products</button>
+          <div class="dropdown-content-unique">
+            <a href="../products/products.html">Products</a>
+        <!--    <a href="../products/agriculture.html">Agriculture</a>-->
+          </div>
+        </div>
+        <div class="dropdown-unique">
+          <button class="dropbtn-unique">Food Safety</button>
+          <div class="dropdown-content-unique">
+            <a href="../food-safety/our-standards.html">Our Standards</a>
+         <!--   <a href="../food-safety/traceability.html">Traceability</a>-->
+          </div>
+        </div>
+        <div class="dropdown-unique">
+          <button class="dropbtn-unique">PR Media</button>
+          <div class="dropdown-content-unique">
+         <!--   <a href="../media/news.html">News</a>-->
+            <a href="../media/gallery.html">Gallery</a>
+          </div>
+        </div>
+        <a href="../Keshav-Nagar-Pedha/keshav-nagar-pedha.html" class="menu-item-unique">Keshav Nagar Pedha</a>
+      </div>
+
+      <div class="menu-toggle-unique" onclick="toggleSidebarUnique()">
+        <span>&#9776;</span>
+      </div>
+
+      <div class="icons-unique">
+       
+        <a href="javascript:void(0)" onclick="openCartSidebarUnique()"><img src="../assets/images/add.png"
+          alt="Cart" style="height: 35px; width: auto; font-weight: bold;"></a>
+      </div>
+      <button class="user-entry" onclick="window.location.href='../login.html'">Login</button>
+
+      <div id="google_translate_element"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'x-default', // Set to 'x-default' so English appears in the dropdown
+      includedLanguages: 'en,mr,hi,pa,mai', // English, Marathi, Hindi, Punjabi, Malwani (Maithili as closest)
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    </nav>
+  </header>
+</body>
+<!-- Sidebar for cart -->
+<div id="cartSidebarUnique" class="cart-sidebar-unique">
+  <div class="cart-sidebar-header">
+    <img src="../assets/images/shopping-cart.png" alt="Cart" id="cartIcon" class="cart-icon">
+    <a href="javascript:void(0)" id="closeCartSidebar" class="close-btn" onclick="closeCartSidebar()">×</a>
+  </div>
+  <div id="cartContent" class="cart-content">
+    <p id="cartEmptyMessage">Your cart is empty</p>
+    <ul id="cartSidebarItems" class="cart-items-list"></ul>
+    <div class="cart-actions">
+      <a href="../products/products.html" id="buyMoreProducts" class="buy-products-btn">Buy More Products</a>
+      <a href="javascript:void(0)" id="checkoutBtn" class="checkout-btn">Checkout</a>
+    </div>
+  </div>
+</div>
+
+
+  <aside class="sidebar-unique">
+    <a href="javascript:void(0)" class="closebtn-unique" onclick="closeSidebarUnique()">&times;</a>
+    <a href="../index.html">Home</a>
+    <a href="../about/about.html">About Us</a>
+    <a href="../about/our-story.html">Our Story</a>
+    <a href="../about/contact-us.html">Contact Us</a>
+    <a href="../products/products.html">Products</a>
+   <!-- <a href="../products/agriculture.html">Agriculture</a>-->
+    <a href="../food-safety/our-standards.html">Our Standards</a>
+ <!--   <a href="../food-safety/traceability.html">Traceability</a>-->
+   <!-- <a href="../media/news.html">News</a>-->
+    <a href="../media/gallery.html">Gallery</a>
+    <a href="../Keshav-Nagar-Pedha/keshav-nagar-pedha.html">Keshav Nagar Pedha</a>
+ </aside>
+
+<div class="container">
+    <section class="food-safety-standards">
+        <h2>Food Safety Standards</h2>
+        <p>The market today is flooded with a variety of food products and as consumers we have a wide range of products and brands to choose from. Are we aware of where and how the products we buy are being grown or manufactured? We hear enough about unethical practices being followed by growers and suppliers of food products resulting in sub-standard quality of foods. We hear about severe nutritional and health issues arising from the consumption of unsafe and poor quality foods. But we have no way to determine what is right for us.</p>
+    </section>
+
+    <div class="cards">
+        <h3>Safety and Quality Practices</h3>
+        <p>At Sarnaik Farms, we respect you as a conscious and discerning customer. We know that you care about what you eat, how it is grown, and whether or not it is healthy and safe for you. We want you to be aware and informed. And so, we are determined to keep food quality and safety as our core value and priority by being committed to delivering quality, safe & traceable products, as per the national and international standards requirements.</p>
+    </div>
+
+    <div class="image-gallery">
+        <img src="../assets/images/Pedha Machine.jpg" alt="Pedha Machine">
+        <img src="../assets/images/Machine 2.png" alt="Machine 2">
+        <img src="../assets/images/Paneer Machine.png" alt="Paneer Machine">
+        <img src="../assets/images/Machine 4.png" alt="Machine 4">
+    </div>
+    <div class="policy-section">
+      <h5>Certifications for Food Quality and Safety</h5>
+      <p>The proof of our food quality is demonstrated through various certifications we have received from authorities in India and all over the world. These certifications are awarded based on the results of rigorous tests, inspections, and audits. Our products are subject to stringent tests of quality and safety and are recognized as meeting national and international quality standards.</p>
+      <div class="image-gallery">
+          <img src="../assets/images/fssai logo.png" alt="FSSAI Certification">
+      
+      </div>
+      <a href="../assets/images/license.pdf" class="button" target="_blank">View Certificate</a>
+  </div>
+  
+
+<footer class="custom-footer">
+  <div class="custom-container">
+    <div class="custom-row">
+      <div class="custom-footer-col custom-company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../about/about.html">About Us</a></li>
+          <li><a href="../products/products.html">Our Products</a></li>
+          <li><a href="../food-safety/our-standards.html">Our Standards</a></li>
+          <li><a href="../media/gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="custom-footer-col custom-products">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="../products/products.html">Keshav Nagar Pedha</a></li>
+          <li><a href="../products/products.html">Dahi</a></li>
+          <li><a href="../products/products.html">Shrikhand</a></li>
+          <li><a href="../products/products.html">Lassi</a></li>
+          <li><a href="../products/products.html">Matha</a></li>
+        </ul>
+      </div>
+
+      <div class="custom-footer-col custom-contact">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="tel:+91763647726">9763647726</a></li>
+          <li><a href="mailto:sarnaikdairy2020@gmail.com">sarnaikdairy2020@gmail.com</a></li>
+          <li><a href="https://www.google.com/maps?q=At.+post.+Chinchambapen+Ta.+Risod+Dist.+Washim+444505" target="_blank">At. post. Chinchambapen Ta. Risod Dist. Washim 444505</a></li>
+          <li><a href="mailto:sarnaiksfpc@gmail.com">sarnaiksfpc@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="custom-footer-col custom-follow">
+        <h4>Follow Us</h4>
+        <div class="custom-social-links">
+          <a href="https://www.facebook.com/">
+            <img src="../assets/images/facebook.png" alt="Facebook">
+          </a>
+          <a href="https://www.youtube.com/@SARNAIK_FARMS">
+            <img src="../assets/images/youtube.png" alt="YouTube">
+          </a>
+          <a href="https://www.instagram.com/sarnaikdairy07?igsh=OHI3YTZza2k5d25v&utm_source=qr">
+            <img src="../assets/images/instagram.png" alt="Instagram">
+          </a>
+          <a href="https://www.twitter.com/">
+            <img src="../assets/images/twitter.png" alt="Twitter">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+</html>

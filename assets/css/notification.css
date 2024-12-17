@@ -1,0 +1,83 @@
+/* In your main CSS file or add to a new file */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Teko', sans-serif;
+  }
+.notification-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.notification {
+    display: none;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.notification.success {
+    background-color: #4caf50;
+    position: relative;
+}
+
+.notification.success::before {
+    content: '✔';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #fff;
+}
+
+.notification.error {
+    background-color: #f44336;
+    position: relative;
+}
+
+.notification.error::before {
+    content: '✘';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #fff;
+}
+
+.notification.show {
+    display: block;
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideIn 0.5s forwards, fadeOut 0.5s 3s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

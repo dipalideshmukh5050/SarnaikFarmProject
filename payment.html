@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Complete your payment securely with Sarnaik Farms. Follow the steps to finalize your purchase and enjoy our products.">
+
+    <title>Payment - Sarnaik Farms</title>
+
+    <!-- Favicon for Browser Tab and Search Engine Display -->
+    <link rel="icon" href="https://sarnaikfarms.com/assets/images/logo.png" type="image/png">
+
+    <!-- Open Graph Tags for Social Media and Search Engine Previews -->
+    <meta property="og:title" content="Payment - Sarnaik Farms">
+    <meta property="og:description" content="Complete your payment securely with Sarnaik Farms. Follow the steps to finalize your purchase and enjoy our products.">
+    <meta property="og:image" content="https://sarnaikfarms.com/assets/images/payment-preview.jpg">
+    <meta property="og:image:alt" content="Payment Page Preview for Sarnaik Farms">
+    <meta property="og:url" content="https://sarnaikfarms.com/payment.html">
+
+    <!-- Schema Markup for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Payment - Sarnaik Farms",
+      "description": "Complete your payment securely with Sarnaik Farms. Follow the steps to finalize your purchase and enjoy our products.",
+      "url": "https://sarnaikfarms.com/payment.html",
+      "image": "https://sarnaikfarms.com/assets/images/payment-preview.jpg"
+    }
+    </script>
+
+    <!-- Fonts and Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mukta:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Teko:wght@300..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css"> <!-- Adjust the path to your CSS file -->
+
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script> <!-- Include Stripe.js -->
+   <style>
+        /* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Teko', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Style the payment section */
+#payment-section {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the main heading */
+#payment-section h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style the form */
+#payment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style the labels */
+#payment-form label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Style the Stripe card element */
+#card-element {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+/* Style the error message */
+#card-errors {
+    color: #e74c3c;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+/* Style the submit button */
+#payment-form button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Change button color on hover */
+#payment-form button:hover {
+    background-color: #218838;
+}
+
+    </style>
+</head>
+
+<body>
+    <section id="payment-section">
+        <h1>Complete Your Purchase</h1>
+        <form id="payment-form">
+            <input type="hidden" id="product-name" name="product-name">
+            <input type="hidden" id="product-price" name="product-price">
+            <input type="hidden" id="product-image" name="product-image">
+            
+            <label for="card-element">Card Details</label>
+            <div id="card-element"><!-- A Stripe Element will be inserted here. --></div>
+            <div id="card-errors" role="alert"></div>
+
+            <button type="submit">Pay Now</button>
+        </form>
+    </section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const params = getQueryParams();
+        document.getElementById('product-name').value = params.name;
+        document.getElementById('product-price').value = params.price;
+        document.getElementById('product-image').value = params.image;
+    });
+    
+    const stripe = Stripe('pk_test_51PiDYURvvBvD9AXG10enU2afNEseTjFwxudPH1AO85o8gb2edPqtWwMeYQzMv7U5DyFmkWZGvLwI1Zxfoz5NFFbo00KgVTL6Wa'); // Replace with your Stripe publishable key
+    const elements = stripe.elements();
+    const cardElement = elements.create('card');
+    cardElement.mount('#card-element');
+    
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+    
+        const productName = document.getElementById('product-name').value;
+        const productPrice = document.getElementById('product-price').value;
+    
+        try {
+            const response = await fetch('/create-payment-intent', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    productName,
+                    productPrice
+                })
+            });
+    
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(errorText);
+            }
+    
+            const { clientSecret } = await response.json();
+    
+            const { error } = await stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                    card: cardElement
+                }
+            });
+    
+            if (error) {
+                const errorElement = document.getElementById('card-errors');
+                errorElement.textContent = error.message;
+            } else {
+                alert('Payment successful!');
+                window.location.href = '/thank-you.html'; // Redirect to a thank you page or similar
+            }
+        } catch (error) {
+            const errorElement = document.getElementById('card-errors');
+            errorElement.textContent = error.message;
+        }
+    });
+
+    async function createPaymentIntent() {
+    const response = await fetch('/create-payment-intent', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ amount: 100 }) // Example amount
+    });
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Failed to create payment intent:', errorText);
+        return;
+    }
+
+    const { clientSecret } = await response.json();
+    console.log('Client Secret:', clientSecret);
+}
+
+    </script>
+    </body>
+    </html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Your payment was successfully processed. Thank you for your purchase with Sarnaik Farms. We appreciate your business!">
+
+    <title>Payment Successful - Sarnaik Farms</title>
+
+    <!-- Favicon for Browser Tab and Search Engine Display -->
+    <link rel="icon" href="https://sarnaikfarms.com/assets/images/logo.png" type="image/png">
+
+    <!-- Open Graph Tags for Social Media and Search Engine Previews -->
+    <meta property="og:title" content="Payment Successful - Sarnaik Farms">
+    <meta property="og:description" content="Your payment was successfully processed. Thank you for your purchase with Sarnaik Farms. We appreciate your business!">
+    <meta property="og:image" content="https://sarnaikfarms.com/assets/images/payment-successful-preview.jpg">
+    <meta property="og:image:alt" content="Payment Successful Page Preview for Sarnaik Farms">
+    <meta property="og:url" content="https://sarnaikfarms.com/payment-successful.html">
+
+    <!-- Schema Markup for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Payment Successful - Sarnaik Farms",
+      "description": "Your payment was successfully processed. Thank you for your purchase with Sarnaik Farms. We appreciate your business!",
+      "url": "https://sarnaikfarms.com/payment-successful.html",
+      "image": "https://sarnaikfarms.com/assets/images/payment-successful-preview.jpg"
+    }
+    </script>
+
+    <!-- Fonts and Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mukta:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Teko:wght@300..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="payment-successful.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Teko', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-out both;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            animation: fadeInDown 1s ease-out both;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-out both;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            margin: 10px auto;
+            background: #fff;
+            transition: width 0.4s ease;
+        }
+
+        h1:hover::after {
+            width: 100%;
+        }
+
+        p::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            margin: 10px auto;
+            background: #fff;
+            transition: width 0.4s ease;
+        }
+
+        p:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You!</h1>
+        <p>Your payment was successful. Thank you for your purchase!</p>
+    </div>
+</body>
+</html>

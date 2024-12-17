@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .message {
+            text-align: center;
+        }
+        .message p {
+            font-size: 18px;
+            margin: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <p>Logging you out...</p>
+    </div>
+    <script>
+        // Automatically log out the user by sending a request to the /logout endpoint
+        fetch('/logout', {
+            method: 'POST'
+        })
+        .then(response => {
+            if (response.ok) {
+                // Redirect to login page after logout
+                window.location.href = '../login.html';
+            } else {
+                // Handle any errors
+                console.error('Logout failed');
+                window.location.href = '../login.html'; // Redirect to login page even if logout fails
+            }
+        })
+        .catch(error => {
+            console.error('Logout error:', error);
+            window.location.href = '../login.html'; // Redirect to login page in case of error
+        });
+    </script>
+</body>
+</html>

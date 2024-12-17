@@ -1,0 +1,398 @@
+/* Global Styles */
+body {
+    font-family: 'Teko', sans-serif;
+    background: #d8f0fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden; /* Prevents scrollbars due to animations */
+}
+
+/* Branding Container Styles */
+.sarnaik-farms-container {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #d8f0fa;
+    border-radius: 50%;
+    width: 300px;
+    margin: auto;
+}
+
+/* Styling for "SARNAIK" text */
+.sarnaik-text {
+    font-size: 40px;
+    font-weight: bold;
+    color: #D7006A;
+    letter-spacing: 2px;
+}
+
+/* Style for the Rupee symbol */
+.sarnaik-text .rupee-symbol {
+    color: #007D00; /* Green color for Rupee symbol */
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* Adding leaf icon */
+.leaf-icon {
+    color: #39B54A;
+    font-size: 1em;
+}
+
+/* Styling for "FARMS" text */
+.farms-text {
+    font-size: 30px;
+    font-weight: normal;
+    color: #7C7C7C;
+    letter-spacing: 1px;
+}
+
+/* Container for form */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Slightly wider container */
+    margin: 0 auto;
+    padding: 2.5rem; /* Increased padding for better spacing */
+    box-sizing: border-box;
+}
+
+/* Form Styles */
+form {
+    background-color: #1e1e1e; /* Dark grey background */
+    color: #f1f1f1; /* Light grey text */
+    padding: 2.5rem; /* Increased padding */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Softer shadow */
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 60px;
+    text-align: center;
+    animation: scaleIn 0.6s ease-out, fadeIn 0.6s ease-in; /* Added fadeIn effect */
+}
+
+/* Keyframes for form animation */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 0.6rem; /* Increased margin for spacing */
+    color: #f1f1f1;
+    font-size: 1.1rem; /* Slightly larger font size */
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+label:hover {
+    color: #ff4081; /* Bright pink on hover */
+    transform: scale(1.1); /* Slightly larger hover effect */
+}
+
+/* Input Styles */
+input {
+    width: calc(100% - 1.8rem); /* Adjusted width for better padding */
+    padding: 0.9rem; /* Increased padding */
+    margin-bottom: 1.2rem; /* Increased margin for spacing */
+    border: 1px solid #444; /* Slightly lighter border */
+    border-radius: 8px; /* More rounded corners */
+    font-size: 1.1rem; /* Slightly larger font size */
+    background-color: #2a2a2a; /* Darker input background */
+    color: #e1e1e1; /* Lighter text */
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder {
+    color: #777; /* Lighter placeholder text */
+}
+
+input:focus {
+    border-color: #ff4081; /* Bright pink border on focus */
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 64, 129, 0.6); /* Bright pink glow effect */
+}
+
+/* Button Container Styles */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1.2rem; /* Increased gap between buttons */
+}
+
+/* Button Styles */
+button,
+#loginButton,
+#signupButton {
+    padding: 0.7rem 1.2rem; /* Adjusted padding for buttons */
+    font-size: 0.9rem; /* Smaller font size */
+    border-radius: 8px; /* More rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    position: relative; /* Required for pseudo-element */
+}
+
+/* Sign Up Button Style */
+#signupButton {
+    background: linear-gradient(45deg, #4CAF50, #8BC34A); /* Green gradient background */
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
+#signupButton:hover {
+    background: linear-gradient(45deg, #45a049, #7cb342); /* Darker green gradient on hover */
+    transform: translateY(-4px) scale(1.05); /* Slight upward and scale effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: hoverEffect 0.3s ease-in-out; /* Add hover animation */
+}
+
+/* Login Button Style */
+#loginButton {
+    background: linear-gradient(45deg, #007bff, #0056b3); /* Blue gradient background */
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
+#loginButton:hover {
+    background: linear-gradient(45deg, #0056b3, #004494); /* Darker blue gradient on hover */
+    transform: translateY(-4px) scale(1.05); /* Slight upward and scale effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: hoverEffect 0.3s ease-in-out; /* Add hover animation */
+}
+
+/* Hover Effect Animation */
+@keyframes hoverEffect {
+    from {
+        transform: translateY(-4px) scale(1.05);
+    }
+    to {
+        transform: translateY(-6px) scale(1.1); /* Slightly more pronounced hover effect */
+    }
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    form {
+        padding: 2rem;
+    }
+
+    button,
+    #loginButton,
+    #signupButton {
+        font-size: 1rem;
+        padding: 0.8rem 1.4rem; /* Adjusted padding for smaller buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
+
+    button,
+    #loginButton,
+    #signupButton {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem; /* Smaller padding for mobile buttons */
+    }
+
+    /* Adjust specific styling for the login and signup buttons in mobile view */
+    #loginButton,
+    #signupButton {
+        margin-left: 10px; /* Add slight margin from the left */
+    }
+}
+
+/* Center the Forgot Password Button */
+.forgot-password {
+    margin-top: 1rem; /* Add some spacing above */
+    text-align: center; /* Center the button horizontally */
+}
+
+.forgot-password a {
+    color: #ff4081; /* Bright pink color */
+    font-size: 1rem; /* Set a consistent font size */
+    text-decoration: none; /* Remove underline */
+    font-weight: 500; /* Slightly bold for emphasis */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+    position: relative; /* Needed for the underline effect */
+    display: inline-block; /* Ensures proper sizing and positioning */
+    padding: 0.5rem 1rem; /* Add some padding for better clickability */
+    border-radius: 6px; /* Rounded corners for a button-like appearance */
+}
+
+.forgot-password a::after {
+    content: '';
+    position: absolute;
+    width: 100%; /* Full-width underline */
+    height: 2px;
+    background-color: #ff4081; /* Matches the text color */
+    left: 0;
+    bottom: -2px; /* Position under the text */
+    transition: transform 0.3s ease; /* Smooth animation for underline effect */
+    transform: scaleX(0); /* Start with no underline */
+}
+
+.forgot-password a:hover::after {
+    transform: scaleX(1); /* Full underline on hover */
+}
+
+/* Ensure hover effects are consistent */
+button:hover,
+input:focus,
+#loginButton:hover,
+#signupButton:hover,
+.forgot-password a:hover {
+    transition: all 0.3s ease; /* Ensure all properties transition smoothly */
+}
+
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust font size for readability on mobile */
+    }
+
+    .sarnaik-farms-container {
+        width: 80%; /* Adjust width for better mobile layout */
+    }
+
+    .sarnaik-text {
+        font-size: 30px; /* Smaller font size for mobile */
+    }
+
+    .farms-text {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    .container {
+        max-width: 90%; /* Adjust container width */
+        padding: 1.5rem; /* Adjust padding for mobile */
+    }
+
+    form {
+        padding: 1.5rem; /* Reduced padding for mobile */
+    }
+
+    label {
+        font-size: 1rem; /* Adjust label font size */
+    }
+
+    input {
+        width: calc(100% - 1.5rem); /* Adjust width for better padding */
+        padding: 0.7rem; /* Adjust padding */
+        margin-bottom: 1rem; /* Adjust margin */
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    button,
+    #loginButton,
+    #signupButton {
+        font-size: 1rem; /* Adjust font size */
+        padding: 0.8rem 1.4rem; /* Adjust padding */
+    }
+
+    .forgot-password {
+        margin-top: 1rem; /* Spacing above */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+
+    .forgot-password a {
+        font-size: 0.9rem; /* Adjust link font size */
+        padding: 0.4rem 0.8rem; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Further adjust font size for very small screens */
+    }
+
+    .sarnaik-farms-container {
+        width: 90%; /* Further adjust width */
+    }
+
+    .sarnaik-text {
+        font-size: 24px; /* Even smaller font size */
+    }
+
+    .farms-text {
+        font-size: 20px; /* Even smaller font size */
+    }
+
+    .container {
+        max-width: 95%; /* Max width adjustment */
+        padding: 1rem; /* Further reduced padding */
+    }
+
+    form {
+        padding: 1rem; /* Further reduced padding */
+    }
+
+    label {
+        font-size: 0.9rem; /* Further adjust label font size */
+    }
+
+    input {
+        width: calc(100% - 1rem); /* Further adjust width */
+        padding: 0.6rem; /* Further adjust padding */
+        margin-bottom: 0.8rem; /* Further adjust margin */
+        font-size: 0.9rem; /* Further adjust font size */
+    }
+
+    button,
+    #loginButton,
+    #signupButton {
+        font-size: 0.9rem; /* Further adjust font size */
+        padding: 0.7rem 1.2rem; /* Further adjust padding */
+    }
+
+    .forgot-password {
+        margin-top: 0.8rem; /* Adjust margin */
+        font-size: 0.8rem; /* Smaller font size */
+    }
+
+    .forgot-password a {
+        font-size: 0.8rem; /* Smaller link font size */
+        padding: 0.3rem 0.6rem; /* Smaller padding */
+    }
+}
